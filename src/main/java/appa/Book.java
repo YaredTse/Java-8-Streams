@@ -1,7 +1,10 @@
 package appa;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @Author(name = "Raoul")
 @Author(name = "Mario")
@@ -12,6 +15,7 @@ public class Book {
     interface Foo{
         boolean test();
     }
+
 
     public static void main(String[] args) {
 
@@ -30,6 +34,14 @@ public class Book {
         Arrays.asList(authors).stream().forEach(a -> {
             System.out.println(a.name());
         });
+
+
+        List<String> st = new ArrayList<String>();
+        st.addAll( (Arrays.asList( new String("test"),
+                new String("test"),
+                new String("test"),
+                new String("test")
+        ));
 
     }
 
