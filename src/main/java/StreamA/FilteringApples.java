@@ -15,10 +15,6 @@ public class FilteringApples {
                 new Apple(120, "red")
         );
 
-//        for ( Apple a : inventory ) {
-//            System.out.println( a.color);
-//        }
-
         // This is a demonstration of how to use method bla
         List<Apple> greenApples = filterApple(inventory, FilteringApples::isGreenApple);
         System.out.println( greenApples );
@@ -31,8 +27,14 @@ public class FilteringApples {
         System.out.println( greenApplesLm );
 
         // Using lambda explicitly
-        List<Apple> heaveApples2 = filterApple( inventory, (apple -> apple.getWeight() > 150 ));
+        List<Apple> heaveApples2 = filterApple( inventory, apple -> apple.getWeight() > 150 );
         System.out.println( heaveApples2);
+
+        // Using lambda explicitly
+        List<Apple> heaveApples3 = filterApple(inventory, apple -> {
+            return apple.getWeight() > 100 && apple.getWeight() < 160;
+        });
+        System.out.println( heaveApples3);
     }
 
     // This method demonstrates without the use of lambda to get Green Apples
