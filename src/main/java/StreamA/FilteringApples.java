@@ -19,12 +19,42 @@ public class FilteringApples {
 //            System.out.println( a.color);
 //        }
 
+        // This is a demonstration of how to use method bla
         List<Apple> greenApples = filterApple(inventory, FilteringApples::isGreenApple);
         System.out.println( greenApples );
 
         List<Apple> heavyApples = filterApple(inventory, FilteringApples::isHeavyApple );
         System.out.println( heavyApples );
 
+        // Using lambda explicitly
+        List<Apple> greenApplesLm = filterApple( inventory, (apple) -> "green".equals( apple.getColor()) );
+        System.out.println( greenApplesLm );
+
+        // Using lambda explicitly
+        List<Apple> heaveApples2 = filterApple( inventory, (apple -> apple.getWeight() > 150 ));
+        System.out.println( heaveApples2);
+    }
+
+    // This method demonstrates without the use of lambda to get Green Apples
+    public static List<Apple> filterGreenApples(List<Apple> appleList ){
+        List<Apple> results = new ArrayList<>();
+        for ( Apple apple : appleList ){
+            if ( "green".equals( apple.getColor()) ){
+                results.add(apple);
+            }
+        }
+        return results;
+    }
+
+    // This method demonstrates without the use of lambda get Heavy Apples
+    public static List<Apple> filterHeavyApples(List<Apple> appleList ){
+        List<Apple> results = new ArrayList<>();
+        for ( Apple apple : appleList ){
+            if ( apple.getWeight() > 150  ){
+                results.add(apple);
+            }
+        }
+        return results;
     }
 
     public static boolean isGreenApple(Apple apple){
