@@ -1,6 +1,7 @@
 package StreamA;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.StringJoiner;
 
@@ -35,6 +36,12 @@ public class Foo {
                 .map( (f) -> f.str.toUpperCase() )
                 .sorted()
                 .forEach( System.out::println );
+
+
+        Arrays.asList("a1", "a2", "a3")
+                .stream()
+                .findFirst()
+                .ifPresent(System.out::println);  // a1
 
     }
 }
