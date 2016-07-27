@@ -1,0 +1,7 @@
+target/*
+target/*.xml
+.idea/*
+.idea/*.xml
+Java-8-Streams.iml
+
+
