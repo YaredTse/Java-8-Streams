@@ -37,11 +37,11 @@ public class Book {
 
 
         List<String> st = new ArrayList<String>();
-        st.addAll( (Arrays.asList( new String("test"),
+        st.addAll( ( Arrays.asList( new String("test"),
                 new String("test"),
                 new String("test"),
                 new String("test")
-        ));
+        )));
 
     }
 
